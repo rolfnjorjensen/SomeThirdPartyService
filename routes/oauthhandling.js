@@ -1,5 +1,5 @@
 var express = require('express');
-var http = require('http');
+var http = require('https');
 var router = express.Router();
 
 router.get('/', function(req, res) {
@@ -18,11 +18,10 @@ router.get('/', function(req, res) {
 
 function resolveTokens(code, callback) {
 	var reqOptions = {
-		hostname : 'localhost',
-		port: '8889',
-		path: '/tradeshift-proxy/auth/token',
+		hostname : 'api-apps-sandbox.tradeshift.com',
+		path: '/tradeshift/auth/token',
 		method: 'POST',
-		auth: 'BillysBilling.Billing:abc123',
+		auth: 'AcmeCorp.DemoService:abc123',
 		headers: {
 			"Accept" : "application/json",
 			"Content-Type" : "application/x-www-form-urlencoded"
@@ -46,8 +45,7 @@ function resolveTokens(code, callback) {
 
 function makeDemoAPICall(accessToken, callback) {
 	var reqOptions = {
-		hostname : 'localhost',
-		port: '8889',
+		hostname : 'api-apps-sandbox.tradeshift.com',
 		path: '/tradeshift-proxy/rest/external/account/info',
 		headers: {
 			"Accept" : "application/json",

@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.redirect('http://localhost:8889/tradeshift-proxy/auth/login?response_type=code&client_id=BillysBilling.Billing&redirect_uri=https://somethirdpartyservice.heroku.com/service&scope=openid');
+  res.redirect('https://api-apps-sandbox.tradeshift.com/tradeshift/auth/login?response_type=code&client_id=AcmeCorp.DemoService&redirect_uri=https://somethirdpartyservice.heroku.com/service&scope=openid');
 });
 
 module.exports = router;
