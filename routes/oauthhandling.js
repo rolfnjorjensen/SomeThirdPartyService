@@ -46,7 +46,7 @@ function resolveTokens(code, callback) {
 function makeDemoAPICall(accessToken, callback) {
 	var reqOptions = {
 		hostname : 'api-apps-sandbox.tradeshift.com',
-		path: '/tradeshift-proxy/rest/external/account/info',
+		path: '/tradeshift/rest/external/account/info',
 		headers: {
 			"Accept" : "application/json",
 			"Authorization" : "Bearer " + accessToken
