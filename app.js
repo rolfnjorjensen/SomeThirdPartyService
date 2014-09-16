@@ -12,6 +12,8 @@ var oauthhandling = require('./routes/oauthhandling');
 
 var app = express();
 
+var request = require('request');
+
 // oauth stuff
 
 // view engine setup
@@ -30,6 +32,11 @@ app.use('/jpdemo', jpdemo);
 app.use('/service', oauthhandling);
 app.use('/users', users);
 
+var apiUrl = 'https://dummydomain';
+app.use('/proxy', function(req, res) {
+  var url = apiUrl + req.url;
+  req.pipe(request(url)).pipe(res);
+});
 
 /// catch 404 and forward to error handler
 app.use(function(req, res, next) {
