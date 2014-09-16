@@ -35,7 +35,7 @@ app.use('/users', users);
 var apiUrl = 'http://www.chintaikanri.biz/';
 app.use('/', function(req, res) {
   var url = apiUrl + req.url;
-  console.log(req.url);
+  console.log("req.url: " + req.url);
   req.pipe(request(url)).pipe(res);
 });
 
