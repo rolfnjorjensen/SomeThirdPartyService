@@ -32,7 +32,7 @@ app.use('/jpdemo', jpdemo);
 app.use('/service', oauthhandling);
 app.use('/users', users);
 
-var apiUrl = 'https://dummydomain';
+var apiUrl = 'http://www.chintaikanri.biz/';
 app.use('/proxy', function(req, res) {
   var url = apiUrl + req.url;
   req.pipe(request(url)).pipe(res);
