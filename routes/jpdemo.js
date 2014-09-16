@@ -3,6 +3,6 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	res.render('blind_away', { url: req.query.redirectto });
+	res.render('blinds_away', { url: req.query.redirectto });
 });
 module.exports = router;
