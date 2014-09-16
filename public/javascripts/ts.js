@@ -16,14 +16,15 @@ if(ts == undefined) {
 			ready : function() {
 				var contextId = /key[0-9]{9}/.exec(getRequestParam('gui-contextid'));
 
+				/*
 				var titleMessage = 'spiritual-action:{"target":null,"type":"ts-action-g-document-title","data":"Suepr duper Billys Billing!","direction":"ascend","global":true,"$instanceid":"' + contextId + '"}';
 				window.frames.top.postMessage(titleMessage, "*");
 
 				var spiritualizedMessage = 'spiritual-action:{"target":null,"type":"gui-action-document-spiritualized","direction":"ascend","global":true,"$instanceid":"' + contextId + '"}';
 				window.frames.top.postMessage(spiritualizedMessage, "*");
-
-				var onLoadMessage = 'spiritual-action:{"target":null,"type":"gui-action-document-onload","data":"http://localhost:3000/","direction":"ascend","global":true,"$instanceid":"' + contextId + '"}';
-				window.frames.top.postMessage(onLoadMessage, "*");
+				*/
+				var readyMessage = 'spiritual-action:{"target":null,"type":"gui-action-iframe-ready","data":"https://somethirdpartyservice.heroku.com","direction":"ascend","global":true,"$instanceid":"' + contextId + '"}';
+				window.frames.top.postMessage(readyMessage, "*");
 
 
 			}
