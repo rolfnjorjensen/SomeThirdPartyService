@@ -27,13 +27,13 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
+//app.use('/', routes);
 app.use('/jpdemo', jpdemo);
 app.use('/service', oauthhandling);
 app.use('/users', users);
 
 var apiUrl = 'http://www.chintaikanri.biz/';
-app.use('/proxy', function(req, res) {
+app.use('/', function(req, res) {
   var url = apiUrl + req.url;
   req.pipe(request(url)).pipe(res);
 });
